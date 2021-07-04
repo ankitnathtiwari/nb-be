@@ -1,0 +1,14 @@
+{"message":"text info","level":"info","service":"user-service","timestamp":"2021-06-04T06:04:07.754Z"}
+{"message":"text info","level":"info","timestamp":"2021-06-04T06:04:38.125Z"}
+{"level":"info","message":"text info","timestamp":"2021-06-04T06:07:49.902Z"}
+{"level":"info","message":"text info","timestamp":"2021-06-04T06:08:09.678Z"}
+{"level":"http","message":"text info","timestamp":"2021-06-04T06:10:55.695Z"}
+{"level":"http","message":"http request received","timestamp":"2021-06-04T06:11:42.485Z"}
+{"level":"http","message":"http request received","timestamp":"2021-06-04T06:26:57.391Z"}
+{"level":"http","message":"http request received","timestamp":"2021-06-04T06:26:58.756Z"}
+{"level":"http","message":"http request received","timestamp":"2021-06-04T06:26:59.285Z"}
+{"level":"http","message":"http request received","timestamp":"2021-06-04T06:26:59.925Z"}
+{"level":"http","timestamp":"2021-06-04T06:29:41.242Z"}
+{"cookie":{"originalMaxAge":60000,"expires":"2021-06-04T06:31:20.100Z","secure":false,"httpOnly":false,"path":"/"},"level":"http","timestamp":"2021-06-04T06:30:20.101Z"}
+{"level":"http","message":"/post","timestamp":"2021-06-04T06:35:42.819Z"}
+{"level":"http","message":"/auth","timestamp":"2021-06-04T06:37:02.242Z"}

@@ -1,0 +1,15 @@
+const express = require("express");
+const { allPost, myPost } = require("../../controller/post/post-read");
+const { postCreate } = require("../../controller/post/post-create/index");
+const { upload } = require("../../middleware/multer/index");
+const { postUpdate } = require("../../controller/post/post-update");
+const { postDelete } = require("../../controller/post/post-delete");
+const router = express.Router();
+
+router.get("/allpost", allPost);
+router.get("/mypost", myPost);
+router.post("/create", upload.single("image"), postCreate);
+router.put("/update", upload.single("image"), postUpdate);
+router.post("/delete", postDelete);
+
+module.exports = router;
