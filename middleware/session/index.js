@@ -12,4 +12,4 @@ const option = {
   cookie: { path: "/", httpOnly: false, secure: false, maxAge: 1200000 },
 };
 
-module.exports = session(option);
+module.exports = { option };

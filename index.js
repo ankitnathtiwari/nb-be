@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const cors = require("cors");
-// const corsOptions = require("./middleware/cors/index");
+const session = require("express-session");
+const { option } = require("./middleware/session/index");
 const { logger, logHTTP } = require("./middleware/logger/index");
 require("dotenv").config();
 const mongoose = require("mongoose");
@@ -30,11 +31,10 @@ var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 //session
-const session = require("./middleware/session");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(session);
+app.use(session(option));
 
 //routing
 
