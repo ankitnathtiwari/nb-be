@@ -1,10 +1,11 @@
-const express = require("express");
-const session = require("express-session");
 require("dotenv").config();
 const MongoStore = require("connect-mongo");
 
 const option = {
-  store: MongoStore.create({ mongoUrl: process.env.mongodb }),
+  store: MongoStore.create({
+    mongoUrl:
+      "mongodb+srv://ankitfounder:1234@cluster0.avlkx.mongodb.net/ankitdb?retryWrites=true&w=majority",
+  }),
   resave: false,
   name: "sessionId",
   saveUninitialized: false,

@@ -21,7 +21,10 @@ app.use(cors(corsOptions));
 
 //db connections
 mongoose
-  .connect(process.env.mongodb, { useNewUrlParser: true })
+  .connect(
+    "mongodb+srv://ankitfounder:1234@cluster0.avlkx.mongodb.net/ankitdb?retryWrites=true&w=majority",
+    { useNewUrlParser: true }
+  )
   .then(() => {
     console.log("Your are connected to database");
   })
@@ -40,4 +43,4 @@ app.use(session(option));
 
 app.use("/", require("./routes/route/index"));
 
-app.listen(process.env.port, () => console.log("app is listening to 8000"));
+app.listen(8000, () => console.log("app is listening to 8000"));
