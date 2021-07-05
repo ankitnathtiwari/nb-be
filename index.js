@@ -19,9 +19,12 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //db connections
-mongoose.connect(process.env.mongodb, { useNewUrlParser: true }).then(() => {
-  console.log("Your are connected to database");
-});
+mongoose
+  .connect(process.env.mongodb, { useNewUrlParser: true })
+  .then(() => {
+    console.log("Your are connected to database");
+  })
+  .catch((err) => console.log(err));
 
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
