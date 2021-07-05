@@ -19,7 +19,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //db connections
-mongoose.connect(process.env.mongoDB, { useNewUrlParser: true }).then(() => {
+mongoose.connect(process.env.mongodb, { useNewUrlParser: true }).then(() => {
   console.log("Your are connected to database");
 });
 
@@ -37,4 +37,4 @@ app.use(session);
 
 app.use("/", require("./routes/route/index"));
 
-app.listen(8000, () => console.log("app is listening to 8000"));
+app.listen(process.env.port, () => console.log("app is listening to 8000"));
