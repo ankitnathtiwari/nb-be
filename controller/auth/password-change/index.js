@@ -7,6 +7,7 @@ const tokenVerification = (req, res) => {
     if (data) {
       req.session.changeUser = data.email;
       console.log(req.session, "token verification", req.sessionID);
+      // TODO: change to env var
       res.redirect("http://localhost:8080/password_change");
     } else {
       res.json({ tokenVerified: false, message: "invalid token" });

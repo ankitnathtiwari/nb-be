@@ -4,6 +4,7 @@ const router = express.Router();
 const path = require("path");
 
 router.use("/json_api", require("../json-api/index"));
+
 router.use("/", express.static("public/dist"));
 router.use("/login", express.static("public/dist"));
 router.use("/register", express.static("public/dist"));
