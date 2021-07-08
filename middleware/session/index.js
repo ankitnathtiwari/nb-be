@@ -3,8 +3,7 @@ const MongoStore = require("connect-mongo");
 
 const option = {
   store: MongoStore.create({
-    mongoUrl:
-      "mongodb+srv://ankitfounder:1234@cluster0.avlkx.mongodb.net/ankitdb?retryWrites=true&w=majority",
+    mongoUrl: process.env.mongodb,
   }),
   resave: false,
   name: "sessionId",
