@@ -5,6 +5,6 @@
 /uploads
 
 # production
-.env
+#.env
 
 

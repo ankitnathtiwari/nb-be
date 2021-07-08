@@ -21,10 +21,7 @@ app.use(cors(corsOptions));
 
 //db connections
 mongoose
-  .connect(
-    "mongodb+srv://ankitfounder:1234@cluster0.avlkx.mongodb.net/ankitdb?retryWrites=true&w=majority",
-    { useNewUrlParser: true }
-  )
+  .connect(process.env.mongodb, { useNewUrlParser: true })
   .then(() => {
     console.log("Your are connected to database");
   })
