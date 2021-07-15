@@ -2976,3 +2976,7 @@
 {"url":"/images/1625036336896-212e37288da427e4876bf90adc07fef8.webp","method":"GET","ip":"::1","level":"http","timestamp":"2021-07-04T09:16:52.369Z"}
 {"url":"/images/1625295461854-212e37288da427e4876bf90adc07fef8.webp","method":"GET","ip":"::1","level":"http","timestamp":"2021-07-04T09:16:52.374Z"}
 {"url":"/images/1625295517535-212e37288da427e4876bf90adc07fef8.webp","method":"GET","ip":"::1","level":"http","timestamp":"2021-07-04T09:16:52.378Z"}
+{"url":"/","method":"GET","ip":"::1","level":"http","timestamp":"2021-07-08T10:11:50.236Z"}
+{"url":"/bundle.js","method":"GET","ip":"::1","level":"http","timestamp":"2021-07-08T10:11:50.275Z"}
+{"url":"/json_api/auth","method":"GET","ip":"::1","level":"http","timestamp":"2021-07-08T10:11:50.476Z"}
+{"url":"/favicon.ico","method":"GET","ip":"::1","level":"http","timestamp":"2021-07-08T10:11:50.603Z"}
