@@ -2980,3 +2980,8 @@
 {"url":"/bundle.js","method":"GET","ip":"::1","level":"http","timestamp":"2021-07-08T10:11:50.275Z"}
 {"url":"/json_api/auth","method":"GET","ip":"::1","level":"http","timestamp":"2021-07-08T10:11:50.476Z"}
 {"url":"/favicon.ico","method":"GET","ip":"::1","level":"http","timestamp":"2021-07-08T10:11:50.603Z"}
+{"url":"/json_api/auth/register","method":"OPTIONS","ip":"::1","level":"http","timestamp":"2021-07-16T06:58:39.340Z"}
+{"url":"/json_api/auth/register","method":"POST","ip":"::1","level":"http","timestamp":"2021-07-16T06:58:39.345Z"}
+{"url":"/json_api/auth/login","method":"OPTIONS","ip":"::1","level":"http","timestamp":"2021-07-16T07:00:08.067Z"}
+{"url":"/json_api/auth/login","method":"POST","ip":"::1","level":"http","timestamp":"2021-07-16T07:00:08.070Z"}
+{"url":"/json_api/post/mypost?page=1&top=all","method":"GET","ip":"::1","level":"http","timestamp":"2021-07-16T07:00:08.838Z"}
