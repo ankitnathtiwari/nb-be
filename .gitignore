@@ -3,7 +3,9 @@
 # dependencies
 /node_modules
 /uploads
-
+/log
+/images
+/data
 # production
 #.env
 
