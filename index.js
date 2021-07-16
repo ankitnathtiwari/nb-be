@@ -14,7 +14,7 @@ app.use(logHTTP);
 // app.use(cors(corsOptions));
 const corsOptions = {
   credentials: true, // This is important.
-  origin: ["http://localhost"],
+  origin: ["http://localhost:80"],
 };
 
 app.use(cors(corsOptions));
