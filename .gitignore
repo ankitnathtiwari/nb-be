@@ -6,6 +6,7 @@
 /log
 /images
 /data
+/compressed-images
 # production
 #.env
 
