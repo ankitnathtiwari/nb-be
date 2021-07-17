@@ -8,7 +8,7 @@ const { logger, logHTTP } = require("./middleware/logger/index");
 require("dotenv").config();
 const mongoose = require("mongoose");
 mongoose.set("useUnifiedTopology", true);
-
+console.log("request received first time");
 //logging
 app.use(logHTTP);
 // app.use(cors(corsOptions));
