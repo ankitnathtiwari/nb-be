@@ -1,4 +1,5 @@
 const authStatus = (req, res) => {
+  console.log("auth request received");
   req.session.user
     ? res.json({ auth: true, user: req.session.user.name })
     : res.json({ auth: false, user: "" });
