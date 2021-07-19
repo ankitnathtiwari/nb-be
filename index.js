@@ -18,6 +18,7 @@ const corsOptions = {
     "http://localhost:8080",
     "http://localhost",
     "http://3.17.55.187:8000",
+    "https://newsbird.live",
   ],
 };
 

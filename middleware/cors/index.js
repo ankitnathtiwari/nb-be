@@ -1,5 +1,9 @@
 const corsOptions = {
-  origin: ["http://localhost:8080/", "http://localhost:8000/"],
+  origin: [
+    "http://localhost:8080/",
+    "http://localhost:8000/",
+    "https://newsbird.live/",
+  ],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: [
     "Content-Type",
