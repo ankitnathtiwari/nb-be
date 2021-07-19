@@ -3,7 +3,7 @@ const MongoStore = require("connect-mongo");
 
 const option = {
   store: MongoStore.create({
-    mongoUrl: process.env.mongodb,
+    mongoUrl: process.env.mongodbLocal,
   }),
   resave: false,
   name: "sessionId",
