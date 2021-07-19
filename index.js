@@ -25,7 +25,7 @@ app.use(cors(corsOptions));
 
 //db connections
 mongoose
-  .connect(process.env.mongodb, { useNewUrlParser: true })
+  .connect(process.env.mongodbLocal, { useNewUrlParser: true })
   .then(() => {
     console.log("Your are connected to database");
   })
