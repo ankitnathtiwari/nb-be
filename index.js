@@ -16,6 +16,7 @@ const corsOptions = {
   credentials: true, // This is important.
   origin: [
     "http://localhost:8080",
+    "http://localhost:8000",
     "http://localhost",
     "http://3.17.55.187:8000",
     "https://newsbird.live",
