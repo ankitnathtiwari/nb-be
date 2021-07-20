@@ -8,7 +8,9 @@ const regObj = (req) => {
 };
 
 const filePath = (req) => {
-  return `http://localhost:8000/images${req.file.path.split("uploads")[1]}`;
+  return `https://newsbird.live/compressed-images${
+    req.file.path.split("uploads")[1]
+  }`;
 };
 
 const uploadPost = (req) => {
