@@ -20,6 +20,7 @@ const corsOptions = {
     "http://localhost",
     "http://3.17.55.187:8000",
     "https://newsbird.live",
+    "https://reporters.newsbird.live",
   ],
 };
 
