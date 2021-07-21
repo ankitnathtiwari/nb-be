@@ -1,3 +1,7 @@
+const domain = "https://newsbird.live";
+const prodUrl = "http://localhost:8000";
+const url = domain;
+
 const regObj = (req) => {
   return {
     name: req.body.name,
@@ -8,9 +12,7 @@ const regObj = (req) => {
 };
 
 const filePath = (req) => {
-  return `https://newsbird.live/compressed-images${
-    req.file.path.split("uploads")[1]
-  }`;
+  return `${url}/compressed-images${req.file.path.split("uploads")[1]}`;
 };
 
 const uploadPost = (req) => {

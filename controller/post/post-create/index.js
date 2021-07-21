@@ -9,15 +9,15 @@ const postCreate = (req, res) => {
   //validate
   if (postValidation(req).status) {
     //create new post instance //save it to database // send the result to db
-    resizedImage(req)
-      .then(() =>
+    resizedImage(req, res)
+      .then((data) => {
         new post(uploadPost(req)).save().then(() => {
           return res.json({
             postCreated: true,
             message: "Post Saved SuccessFully",
           });
-        })
-      )
+        });
+      })
       .catch((err) => {
         console.log(err);
         res.json({ postCreated: false, message: "Some Error Occured" });

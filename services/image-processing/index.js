@@ -1,19 +1,20 @@
 const Jimp = require("jimp");
 const path = require("path");
 
-const resizedImage = (req) =>
-  Jimp.read(`${req.file.path}`)
+const resizedImage = (req, res) => {
+  console.log(req.file);
+  return Jimp.read(`${req.file.path}`)
     .then((lenna) => {
-      return (
-        lenna
-          .resize(720, Jimp.AUTO) // resize
-          .quality(85)
-          // TODO: upload images to aws s3
-          .writeAsync(`compressed-images/${req.file.filename}`)
-      );
+      console.log("reached jimp");
+      return lenna
+        .resize(720, Jimp.AUTO) // resize
+        .quality(85)
+        .writeAsync(`compressed-images/${req.file.filename}`);
+      // TODO: upload images to aws s3
     })
     .catch((err) => {
-      return res.json("some error occured");
+      return err;
     });
+};
 
 module.exports = { resizedImage };
