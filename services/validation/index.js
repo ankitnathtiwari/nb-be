@@ -16,6 +16,8 @@ const topicValidation = (data) => {
     "sports",
     "international",
     "national",
+    "world",
+    "business",
   ];
   return topics.includes(data);
 };

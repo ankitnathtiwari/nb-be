@@ -3,17 +3,19 @@ const { topicValidation } = require("../../../services/validation/index");
 
 const allPost = (req, res) => {
   if (topicValidation(req.query.top)) {
-    req.query.top === "all"
-      ? post
-          .find()
-          .skip((req.query.page - 1) * 5)
-          .limit(5)
-          .then((post) => res.json(post))
-      : post
-          .find({ topic: req.query.top })
-          .skip((req.query.page - 1) * 5)
-          .limit(5)
-          .then((post) => res.json(post));
+    if (req.query.top === "all" || req.query.top.length === 0) {
+      post
+        .find()
+        .skip((req.query.page - 1) * 5)
+        .limit(5)
+        .then((post) => res.json(post));
+    } else {
+      post
+        .find({ topic: req.query.top })
+        .skip((req.query.page - 1) * 5)
+        .limit(5)
+        .then((post) => res.json(post));
+    }
   } else {
     res.json("invalid request");
   }
