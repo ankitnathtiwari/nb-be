@@ -8,6 +8,7 @@ const contentValidate = (data) => {
 
 const topicValidation = (data) => {
   const topics = [
+    "",
     "all",
     "politics",
     "scienceandtech",
