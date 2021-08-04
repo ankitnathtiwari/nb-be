@@ -8,12 +8,14 @@ const allPost = (req, res) => {
         .find()
         .skip((req.query.page - 1) * 5)
         .limit(5)
+        .sort({ pub_date: -1 })
         .then((post) => res.json(post));
     } else {
       post
         .find({ topic: req.query.top })
         .skip((req.query.page - 1) * 5)
         .limit(5)
+        .sort({ pub_date: -1 })
         .then((post) => res.json(post));
     }
   } else {
