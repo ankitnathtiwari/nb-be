@@ -9,6 +9,7 @@ const allPost = (req, res) => {
         .sort({ pub_date: -1 })
         .skip((req.query.page - 1) * 5)
         .limit(5)
+        .exec()
         .then((post) => res.json(post));
     } else {
       post
@@ -16,6 +17,7 @@ const allPost = (req, res) => {
         .sort({ pub_date: -1 })
         .skip((req.query.page - 1) * 5)
         .limit(5)
+        .exec()
         .then((post) => res.json(post));
     }
   } else {

@@ -1,6 +1,6 @@
 const domain = "https://newsbird.live";
 const prodUrl = "http://localhost:8000";
-const url = prodUrl;
+const url = domain;
 
 const regObj = (req) => {
   return {
