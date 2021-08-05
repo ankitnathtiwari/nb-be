@@ -5,14 +5,14 @@ const allPost = (req, res) => {
   if (topicValidation(req.query.top)) {
     if (req.query.top === "all" || req.query.top.length === 0) {
       post
-        .find()
+        .find({ $orderby: { pub_date: -1 } })
         .sort({ pub_date: -1 })
         .skip((req.query.page - 1) * 5)
         .limit(5)
         .then((post) => res.json(post));
     } else {
       post
-        .find({ topic: req.query.top })
+        .find({ topic: req.query.top, $orderby: { pub_date: -1 } })
         .sort({ pub_date: -1 })
         .skip((req.query.page - 1) * 5)
         .limit(5)
