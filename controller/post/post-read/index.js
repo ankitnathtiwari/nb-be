@@ -6,14 +6,12 @@ const allPost = (req, res) => {
     if (req.query.top === "all" || req.query.top.length === 0) {
       post
         .find({ $orderby: { pub_date: -1 } })
-        .sort({ pub_date: -1 })
         .skip((req.query.page - 1) * 5)
         .limit(5)
         .then((post) => res.json(post));
     } else {
       post
         .find({ topic: req.query.top, $orderby: { pub_date: -1 } })
-        .sort({ pub_date: -1 })
         .skip((req.query.page - 1) * 5)
         .limit(5)
         .then((post) => res.json(post));
