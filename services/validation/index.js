@@ -1,3 +1,5 @@
+const config = require("../../config/config");
+
 const titleValidate = (data) => {
   return data.split(" ").length > 10;
 };
@@ -33,19 +35,25 @@ const loginValidation = (req) => {
 const regValidation = (req) => {
   if (req.body.email && req.body.password && req.body.name && req.body.age) {
     if (req.body.email.split("@")[1] === "gmail.com") {
+      if (config.authUsers.includes(req.body.email)) {
+        return {
+          status: true,
+          message: "Validated",
+        };
+      }
       return {
-        regStatus: true,
-        message: "Validated",
+        status: false,
+        message: "You Are Not Authorized To Register ",
       };
     } else {
       return {
-        regStatus: false,
+        status: false,
         message: "Please Provide Valid Email Address",
       };
     }
   } else {
     return {
-      regStatus: false,
+      status: false,
       message: "Please Provide All The details",
     };
   }

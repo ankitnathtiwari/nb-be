@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+
 mongoose.set("useUnifiedTopology", true);
-mongoose.connect(process.env.mongoDB, { useNewUrlParser: true }).then(() => {
+mongoose.connect(process.env.mongodb, { useNewUrlParser: true }).then(() => {
   console.log("Your are connected to database");
 });
 
