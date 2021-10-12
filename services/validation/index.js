@@ -1,11 +1,11 @@
 const config = require("../../config/config");
 
 const titleValidate = (data) => {
-  return data.split(" ").length > 10;
+  return data.split(" ").length > 1;
 };
 
 const contentValidate = (data) => {
-  return data.split(" ").length > 40;
+  return data.split(" ").length > 4;
 };
 
 const topicValidation = (data) => {
