@@ -9,7 +9,7 @@ const option = {
   name: "sessionId",
   saveUninitialized: false,
   secret: "secret",
-  cookie: { path: "/", httpOnly: false, secure: false, maxAge: 1200000 },
+  cookie: { path: "/", httpOnly: false, secure: false, maxAge: 604800000 },
 };
 
 module.exports = { option };
