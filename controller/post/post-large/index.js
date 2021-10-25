@@ -21,21 +21,13 @@ const region = process.env.AWS_BUCKET_REGION;
 const accesskeyId = process.env.AWS_ACCESS_KEY;
 const secretAccessKey = process.env.AWS_SECRET_KEY;
 
-// const s3 = new S3({
-//   region: "us-east-2",
-//   accessKeyId: "AKIAQMFVDOA5UADMCTAE",
-//   secretAccessKey: "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",
-// });
 
 const uploadParallel = async (client, target)=>{
     const parallelUploads3 = new Upload({
         client:client,
         params:target,
     });
-    
-    // s3client.upload(target).promise().then(()=>{
-    //     res.json("sfds")
-    // })
+
     parallelUploads3.on("httpUploadProgress", (progress) => {
         console.log("uploading document");
     });
