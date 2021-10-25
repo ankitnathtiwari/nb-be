@@ -1,4 +1,3 @@
-
 const regObj = (req) => {
   return {
     name: req.body.name,
@@ -8,17 +7,13 @@ const regObj = (req) => {
   };
 };
 
-// const filePath = (req) => {
-//   log
-//   return `${url}/compressed-images${}`;
-// };
-
-const uploadPost = (req) => {
+const uploadPost = (req, postImage) => {
+  console.log(postImage);
   return {
     title: req.body.title,
     content: req.body.content,
     topic: req.body.topic,
-    image: req.file.path.split("uploads")[1],
+    image: postImage.key,
     author: req.session.user.id || "Anonymous",
     pub_date: new Date(),
     mod_date: new Date(),
