@@ -3,6 +3,7 @@ const corsOptions = {
     "http://localhost:8080/",
     "http://localhost:8000/",
     "https://newsbird.live/",
+    "http://3.110.33.147"
   ],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: [

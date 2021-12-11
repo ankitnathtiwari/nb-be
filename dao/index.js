@@ -14,17 +14,17 @@ const uploadPost = (req, postImage) => {
     content: req.body.content,
     topic: req.body.topic,
     image: postImage.key,
-    author: req.session.user.id || "Anonymous",
+    author: req.session.user ? req.session.user.id : "Anonymous",
     pub_date: new Date(),
     mod_date: new Date(),
   };
 };
 
-const updatePost = (post, req) => {
+const updatePost = (post, req, postImage) => {
   post.title = req.body.title;
-  post.image = req.file.path.split("uploads")[1];
   post.content = req.body.content;
   post.topic = req.body.topic;
+  post.image = postImage.key;
   post.mod_date = new Date();
 };
 

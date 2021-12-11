@@ -11,7 +11,7 @@ const contentValidate = (data) => {
 const topicValidation = (data) => {
   const topics = [
     "",
-    "all",
+    "allpost",
     "politics",
     "scienceandtech",
     "entertainment",
@@ -20,6 +20,7 @@ const topicValidation = (data) => {
     "national",
     "world",
     "business",
+    "singlepost",
   ];
   return topics.includes(data);
 };
@@ -80,10 +81,10 @@ const postValidation = (req) => {
   //       reason: "Title Or Content Or Topic Other Than The Recommended Value",
   //     };
   //   } else {
-      return {
-        status: true,
-        reason: "VALIDATION_SUCCESS",
-      };
+  return {
+    status: true,
+    reason: "VALIDATION_SUCCESS",
+  };
   //   }
   // } else {
   //   return { status: false, reason: "Please Provide All The details" };

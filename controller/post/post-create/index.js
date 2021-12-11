@@ -3,13 +3,12 @@ const { post } = require("../../../models/post/index");
 const { uploadPost } = require("../../../dao/index");
 const { postValidation } = require("../../../services/validation/index");
 const { resizedImage } = require("../../../services/image-processing/index");
-const { UploadS3, uploadS3 } = require("../../../services/s3/index");
+const { uploadToS3 } = require("../../../services/s3/index");
 const fs = require("fs");
 const path = require("path");
 
 const postCreate = (req, res) => {
-  //get the post data and file from the request
-  //validate
+
   if (postValidation(req).status) {
     //create new post instance //save it to database // send the result to db
     resizedImage(req, res)
@@ -22,19 +21,18 @@ const postCreate = (req, res) => {
             `${req.file.filename}`
           );
           const fileName = req.file.filename;
-
-          uploadS3(filePath, fileName).then((postImage) => {
-            new post(uploadPost(req, postImage)).save().then(() => {
+          uploadToS3(filePath, fileName).then((postImage) => {
+            new post(uploadPost(req, postImage)).save().then((data) => {
               return res.json({
                 postCreated: true,
                 message: "Post Saved SuccessFully",
+                data:data
               });
             });
           });
         }
       })
       .catch((err) => {
-        console.log(err);
         res.json({
           postCreated: false,
           message: "Some Error Occured",

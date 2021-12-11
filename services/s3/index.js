@@ -9,19 +9,17 @@ const secretAccessKey = process.env.AWS_SECRET_KEY;
 
 const s3 = new S3({
   region: region,
-  accessKeyId: accesskeyId,
-  secretAccessKey: secretAccessKey,
 });
 
-const uploadS3 = (filePath, fileName) => {
+
+const uploadToS3 = (filePath, fileName) => {
   const fileStream = fs.createReadStream(filePath);
   const uploadParams = {
     Bucket: bucketName,
     Body: fileStream,
     Key: fileName,
   };
-
   return s3.upload(uploadParams).promise();
 };
 
-module.exports = { uploadS3 };
+module.exports = { uploadToS3 };
