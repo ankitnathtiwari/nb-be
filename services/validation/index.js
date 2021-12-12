@@ -21,6 +21,7 @@ const topicValidation = (data) => {
     "world",
     "business",
     "singlepost",
+    "miscellaneous"
   ];
   return topics.includes(data);
 };
