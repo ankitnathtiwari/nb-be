@@ -9,5 +9,6 @@
 /compressed-images
 # production
 .env
+/.env
 /public
-
+.gitignore
