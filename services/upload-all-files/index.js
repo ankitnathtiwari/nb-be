@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk");
 const fs = require("fs");
-const path = "/home/ankit/Desktop/nb/nb-code/nb-be/compressed-images";
+const path = "/home/ubuntu/reporter/nb-be/compressed-images";
 
 const S3 = require("aws-sdk/clients/s3");
 
