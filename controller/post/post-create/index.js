@@ -33,6 +33,7 @@ const postCreate = (req, res) => {
         }
       })
       .catch((err) => {
+        console.log({err}, "s3 error");
         res.json({
           postCreated: false,
           message: "Some Error Occured",
