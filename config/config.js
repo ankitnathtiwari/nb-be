@@ -7,6 +7,7 @@ module.exports = {
     "https://newsbird.live",
     "https://reporters.newsbird.live",
     "http://reporters.newsbird.live",
+    "http://15.207.52.81"
   ],
   authUsers: [
     "ankitnathtiwari@gmail.com",
