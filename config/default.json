@@ -1,0 +1,52 @@
+{
+      "storage":{
+        "video":"../../uploads/video",
+        "image":"../../uploads/post-image",
+        "thumbnail":"../../uploads/thumbnail"
+      },
+      
+      "allowedOrigin": [
+        "http://localhost:8080",
+        "http://localhost:8000",
+        "http://localhost",
+        "http://3.17.55.187:8000",
+        "https://newsbird.live",
+        "https://reporters.newsbird.live",
+        "http://reporters.newsbird.live"
+      ],
+      
+      "authUsers": [
+        "ankitnathtiwari@gmail.com",  
+        "ankitfounder@gmail.com",
+        "imarpitjaiswal@gmail.com"
+      ],      
+      "bucket":{
+        "image":"nb-test-video-mum",
+        "video":"nb-test-video-mum",
+        "thumbnail":"nb-test-video-mum",
+        "deletedVideo":"nb-test-deleted-mum",
+        "deletedThumbnail":"nb-test-deleted-mum"
+      },
+      "region":"ap-south-1",
+      "fieldname":{
+        "thumbnail":"thumbnail",
+        "video":"video",
+        "image":"image"
+      },
+      "topics":[
+        "",
+        "all",
+        "allpost",
+        "politics",
+        "scienceandtech",
+        "entertainment",
+        "sports",
+        "international",
+        "national",
+        "world",
+        "business",
+        "singlepost",
+        "miscellaneous"
+      ]
+
+}

@@ -6,9 +6,9 @@ const { resizedImage } = require("../../../services/image-processing/index");
 const { uploadToS3 } = require("../../../services/s3/index");
 const fs = require("fs");
 const path = require("path");
+const config = require("config");
 
 const postCreate = (req, res) => {
-
   if (postValidation(req).status) {
     //create new post instance //save it to database // send the result to db
     resizedImage(req, res)
@@ -21,19 +21,21 @@ const postCreate = (req, res) => {
             `${req.file.filename}`
           );
           const fileName = req.file.filename;
-          uploadToS3(filePath, fileName).then((postImage) => {
+
+          const bucketName = config.bucket.image;
+          uploadToS3(filePath, fileName, bucketName).then((postImage) => {
             new post(uploadPost(req, postImage)).save().then((data) => {
               return res.json({
                 postCreated: true,
                 message: "Post Saved SuccessFully",
-                data:data
+                data: data,
               });
             });
           });
         }
       })
       .catch((err) => {
-        console.log({err}, "s3 error");
+        console.log({ err }, "s3 error");
         res.json({
           postCreated: false,
           message: "Some Error Occured",

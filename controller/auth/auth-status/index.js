@@ -7,7 +7,7 @@ const authStatus = (req, res) => {
 
 const logout = (req, res) => {
   req.session.destroy();
-  res.json({ loggedOut: true, message: "logged out successfully" });
+  res.json({ status: true, message: "logged out successfully" });
 };
 
 module.exports = { authStatus, logout };

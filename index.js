@@ -4,7 +4,7 @@ const cors = require("cors");
 const session = require("express-session");
 const { option } = require("./middleware/session/index");
 const { logHTTP } = require("./middleware/logger/index");
-const config = require("./config/config");
+const config = require("config");
 require("dotenv").config();
 
 //logging

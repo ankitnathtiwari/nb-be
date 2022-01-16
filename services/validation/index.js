@@ -1,4 +1,4 @@
-const config = require("../../config/config");
+const config = require("config");
 
 const titleValidate = (data) => {
   return data.split(" ").length > 1;
@@ -9,24 +9,12 @@ const contentValidate = (data) => {
 };
 
 const topicValidation = (data) => {
-  const topics = [
-    "",
-    "allpost",
-    "politics",
-    "scienceandtech",
-    "entertainment",
-    "sports",
-    "international",
-    "national",
-    "world",
-    "business",
-    "singlepost",
-    "miscellaneous"
-  ];
-  return topics.includes(data);
+  console.log(data, "data");
+  return config.topics.includes(data);
 };
 
 const loginValidation = (req) => {
+  //data validation currently not applied much
   if (!req.body.email || !req.body.password) {
     return false;
   } else {
