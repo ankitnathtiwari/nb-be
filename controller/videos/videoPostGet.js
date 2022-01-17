@@ -24,7 +24,7 @@ const allVideoPost = (req, res) => {
         );
     } else {
       return videoPost
-        .find({ topic: req.query.top })
+        .find({ topics: req.query.top })
         .sort({ pub_date: -1 })
         .skip((req.query.page - 1) * 5)
         .limit(5)
