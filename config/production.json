@@ -20,7 +20,10 @@
       "imarpitjaiswal@gmail.com"
     ],
     "bucket":{
-      "video":"prod video",
-      "image":"prod image "
+      "image":"nb-post-image",
+      "video":"nb-video-post-mum",
+      "thumbnail":"nb-video-thumbnail-mum",
+      "deletedVideo":"nb-video-deleted-mum",
+      "deletedThumbnail":"nb-thumbnail-deleted-mum"
     }
 }
