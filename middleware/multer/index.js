@@ -5,7 +5,7 @@ const config = require("config");
 var imageStorage = multer.diskStorage({
   //give destination folder
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, config.storage.imageStorage));
+    cb(null, path.join(__dirname, config.storage.image));
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + "image" + "-" + file.originalname);
