@@ -14,7 +14,8 @@
         "https://reporters.newsbird.live",
         "http://reporters.newsbird.live",
         "http://65.0.18.242",
-        "http://ec2-65-0-18-242.ap-south-1.compute.amazonaws.com"
+        "http://ec2-65-0-18-242.ap-south-1.compute.amazonaws.com",
+        "http://staging.newsbird.live"
       ],
       
       "authUsers": [
