@@ -17,4 +17,14 @@ const verifyToken = async (token) => {
   });
 };
 
-module.exports = { token, url, verifyToken };
+const verifyGoogleToken = async (token) => {
+  try {
+    var decoded = jwt.verify(token, "wrong-secret");
+    return decoded;
+  } catch (err) {
+    return err;
+    // err
+  }
+};
+
+module.exports = { token, url, verifyToken, verifyGoogleToken };
