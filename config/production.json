@@ -13,13 +13,7 @@
       "https://reporters.newsbird.live",
       "http://reporters.newsbird.live"
     ],
-
-    "authUsers": [
-      "ankitnathtiwari@gmail.com",
-      "ankitfounder@gmail.com",
-      "imarpitjaiswal@gmail.com",
-      "nbnewsgkp@gmail.com"
-    ],
+    
     "bucket":{
       "image":"nb-post-image-mum",
       "video":"nb-video-post-mum",
