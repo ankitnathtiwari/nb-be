@@ -24,7 +24,7 @@ const loginValidation = (req) => {
 
 const regValidation = (req) => {
   console.log(req.body);
-  if (req.body.email && req.body.password && req.body.name && req.body.age) {
+  if (req.body.email && req.body.password && req.body.name) {
     if (req.body.email.split("@")[1] === "gmail.com") {
       if (config.authUsers.includes(req.body.email)) {
         return {
