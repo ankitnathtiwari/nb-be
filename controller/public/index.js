@@ -1,7 +1,21 @@
 const config = require("config");
 const { query } = require("winston");
 const { follow } = require("../../models/follow/index");
+const { user } = require("../../models/user-reporter");
 
+const UpdateUserFollowerCount = async (follwedUser) => {
+  const followerCount = await follow.countDocuments({ followed: follwedUser });
+  return await user.findOneAndUpdate(
+    {
+      _id: follwedUser,
+    },
+    { followers_count: followerCount },
+    {
+      new: true,
+      upsert: true,
+    }
+  );
+};
 const followUser = async (req, res) => {
   //if user has not subscribed create a document and
   //if the
@@ -20,12 +34,8 @@ const followUser = async (req, res) => {
     new: true,
     upsert: true,
   });
+  const updateFollowerCount = await UpdateUserFollowerCount(req.query.followed);
 
-  console.log(
-    { update, followData },
-    req.session,
-    "followed..................."
-  );
   res.json({
     status: true,
     data: followData,
@@ -41,8 +51,7 @@ const unFollowUser = async (req, res) => {
     followed: req.query.followed,
   };
   let followData = await follow.findOneAndDelete(query);
-
-  console.log(query, followData, req.session, "unfollow user");
+  const updateFollowerCount = await UpdateUserFollowerCount(req.query.followed);
 
   res.json({
     status: true,

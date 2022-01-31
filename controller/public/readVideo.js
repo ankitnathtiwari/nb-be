@@ -61,7 +61,12 @@ const publicVideoFeed = async (req, res) => {
         for (let i = 0; i < reporterDetailList.length; i++) {
           const element = reporterDetailList[i];
           if (String(element._id) === item.user) {
-            return { ...item._doc, authorName: element.name, url: config.url };
+            return {
+              ...item._doc,
+              authorName: element.name,
+              followers_count: element.followers_count,
+              url: config.url,
+            };
           }
         }
       });
@@ -99,8 +104,14 @@ const publicVideoFeed = async (req, res) => {
       const videoListWithAuthor = videoPostList.map((item) => {
         for (let i = 0; i < reporterDetailList.length; i++) {
           const element = reporterDetailList[i];
+          //change here also
           if (String(element._id) === item.user) {
-            return { ...item._doc, authorName: element.name, url: config.url };
+            return {
+              ...item._doc,
+              authorName: element.name,
+              followers_count: element.followers_count,
+              url: config.url,
+            };
           }
         }
       });

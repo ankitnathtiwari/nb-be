@@ -8,7 +8,6 @@ const createUser = (req, res) => {
       res.json({ regStatus: false, message: "User Already Exist" });
     } else {
       const newUser = new user(regObj(req));
-      console.log(newUser);
       hashPassword(newUser.password).then((pass) => {
         newUser.password = pass;
         newUser
