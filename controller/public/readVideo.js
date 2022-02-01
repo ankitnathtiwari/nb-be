@@ -41,15 +41,13 @@ const publicVideoFeed = async (req, res) => {
               }
               return item;
             });
-            res.json({ status: true, videoPosts: videoPostWithFollow });
+            return res.json({ status: true, videoPosts: videoPostWithFollow });
           } else {
-            res.json({ status: true, videoPosts: videoListWithAuthor });
+            return res.json({ status: true, videoPosts: videoListWithAuthor });
           }
         } else {
           return res.json({ status: true, videoPosts: videoListWithAuthor });
         }
-
-        return res.json({ status: true, videoPosts: videoListWithAuthor });
       }
 
       if (req.query.top === "allpost" || req.query.top.length === 0) {
@@ -91,12 +89,12 @@ const publicVideoFeed = async (req, res) => {
               }
               return item;
             });
-            res.json({ status: true, videoPosts: videoPostWithFollow });
+            return res.json({ status: true, videoPosts: videoPostWithFollow });
           } else {
-            res.json({ status: true, videoPosts: videoListWithAuthor });
+            return res.json({ status: true, videoPosts: videoListWithAuthor });
           }
         } else {
-          res.json({ status: true, videoPosts: videoListWithAuthor });
+          return res.json({ status: true, videoPosts: videoListWithAuthor });
         }
       } else {
         const videoPostList = await videoPost
@@ -138,16 +136,16 @@ const publicVideoFeed = async (req, res) => {
               }
               return item;
             });
-            res.json({ status: true, videoPosts: videoPostWithFollow });
+            return res.json({ status: true, videoPosts: videoPostWithFollow });
           } else {
-            res.json({ status: true, videoPosts: videoListWithAuthor });
+            return res.json({ status: true, videoPosts: videoListWithAuthor });
           }
         } else {
-          res.json({ status: true, videoPosts: videoListWithAuthor });
+          return res.json({ status: true, videoPosts: videoListWithAuthor });
         }
       }
     } else {
-      res.json({ status: false, message: "invalid request" });
+      return res.json({ status: false, message: "invalid request" });
     }
   } catch (err) {
     res.json({ status: false, message: err.message });
