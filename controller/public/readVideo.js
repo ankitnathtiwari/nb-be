@@ -148,7 +148,7 @@ const publicVideoFeed = async (req, res) => {
       return res.json({ status: false, message: "invalid request" });
     }
   } catch (err) {
-    res.json({ status: false, message: err.message });
+    return res.json({ status: false, message: err.message });
   }
 };
 
