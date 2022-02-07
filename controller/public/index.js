@@ -2,6 +2,7 @@ const config = require("config");
 const { query } = require("winston");
 const { follow } = require("../../models/follow/index");
 const { user } = require("../../models/user-reporter");
+const { videoPost } = require("../../models/video-post");
 
 const UpdateUserFollowerCount = async (follwedUser) => {
   const followerCount = await follow.countDocuments({ followed: follwedUser });
@@ -60,4 +61,17 @@ const unFollowUser = async (req, res) => {
   });
 };
 
-module.exports = { followUser, unFollowUser };
+const publicViewCount = async (req, res) => {
+  const data = await videoPost.findOneAndUpdate(
+    {
+      _id: req.query.videoId,
+    },
+    { $inc: { view_count: 1 } },
+    {
+      new: true,
+    }
+  );
+  res.json({ status: true, data });
+};
+
+module.exports = { followUser, unFollowUser, publicViewCount };

@@ -14,6 +14,7 @@ const schema = mongoose.Schema({
   hashTags: { type: Array },
   reportFlags: { type: Array },
   videoLength: { type: String, enum: ["long", "short", "medium"] },
+  view_count: { type: Number },
 });
 
 const videoPost = mongoose.model("videoPost", schema);
