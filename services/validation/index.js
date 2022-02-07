@@ -9,7 +9,6 @@ const contentValidate = (data) => {
 };
 
 const topicValidation = (data) => {
-  console.log(data, "data");
   return config.topics.includes(data);
 };
 

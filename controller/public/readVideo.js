@@ -103,7 +103,9 @@ const publicVideoFeed = async (req, res) => {
           .skip((req.query.page - 1) * 5)
           .limit(5)
           .exec();
-        const reporterIdList = videoPostList.map((item) => item.user);
+        const reporterIdList = videoPostList
+          .map((item) => item.user)
+          .filter((item) => item !== "anonymous");
         const reporterDetailList = await user.find({
           _id: { $in: reporterIdList },
         });
@@ -111,7 +113,6 @@ const publicVideoFeed = async (req, res) => {
         const videoListWithAuthor = videoPostList.map((item) => {
           for (let i = 0; i < reporterDetailList.length; i++) {
             const element = reporterDetailList[i];
-            //change here also
             if (String(element._id) === item.user) {
               return {
                 ...item._doc,
@@ -141,7 +142,10 @@ const publicVideoFeed = async (req, res) => {
             return res.json({ status: true, videoPosts: videoListWithAuthor });
           }
         } else {
-          return res.json({ status: true, videoPosts: videoListWithAuthor });
+          return res.json({
+            status: true,
+            videoPosts: videoListWithAuthor.filter((item) => item),
+          });
         }
       }
     } else {
