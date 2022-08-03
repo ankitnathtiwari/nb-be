@@ -1,67 +1,69 @@
 {
-      "storage":{
-        "video":"../../uploads/video",
-        "image":"../../uploads/post-image",
-        "thumbnail":"../../uploads/thumbnail"
-      },
-      
-      "allowedOrigin": [
-        "http://localhost:8080",
-        "http://localhost:8000",
-        "http://localhost",
-        "http://3.17.55.187:8000",
-        "https://newsbird.live",
-        "https://reporters.newsbird.live",
-        "http://reporters.newsbird.live",
-        "http://65.0.18.242",
-        "http://staging.newsbird.live",
-        "http://reporterstaging.newsbird.live"
-      ],
-      
-      "authUsers": [
-        "ankitnathtiwari@gmail.com",  
-        "ankitfounder@gmail.com",
-        "imarpitjaiswal@gmail.com",
-        "nbnewsgkp@gmail.com",
-        "gkpcitynews@gmail.com",
-        "gkpexpnews@gmail.com",
-        "spotlightnb123@gmail.com",
-        "lokvichar123@gmail.com",
-        "cityscoopnb@gmail.com",
-        "viralindianb@gmail.com"
-      ],      
-      "bucket":{
-        "image":"nb-test-video-mum",
-        "video":"nb-test-video-mum",
-        "thumbnail":"nb-test-video-mum",
-        "deletedVideo":"nb-test-deleted-mum",
-        "deletedThumbnail":"nb-test-deleted-mum"
-      },
-      "url":{
-        "image":"https://nb-test-video-mum.s3.ap-south-1.amazonaws.com",
-        "video":"https://nb-test-video-mum.s3.ap-south-1.amazonaws.com",
-        "thumbnail":"https://nb-test-video-mum.s3.ap-south-1.amazonaws.com"
-      },
-      "region":"ap-south-1",
-      "fieldname":{
-        "thumbnail":"thumbnail",
-        "video":"video",
-        "image":"image"
-      },
-      "topics":[
-        "",
-        "all",
-        "allpost",
-        "politics",
-        "scienceandtech",
-        "entertainment",
-        "sports",
-        "international",
-        "national",
-        "world",
-        "business",
-        "singlepost",
-        "miscellaneous"
-      ]
+  "storage": {
+    "video": "../../uploads/video",
+    "image": "../../uploads/post-image",
+    "thumbnail": "../../uploads/thumbnail"
+  },
+  "sns": {
+    "PlatformApplicationArn": "arn:aws:sns:ap-south-1:026149613627:app/GCM/newsbird-fcm"
+  },
+  "allowedOrigin": [
+    "http://localhost:8080",
+    "http://localhost:8000",
+    "http://localhost:3000",
+    "http://localhost",
+    "http://3.17.55.187:8000",
+    "https://newsbird.live",
+    "https://reporters.newsbird.live",
+    "http://reporters.newsbird.live",
+    "http://65.0.18.242",
+    "http://staging.newsbird.live",
+    "http://reporterstaging.newsbird.live"
+  ],
 
+  "authUsers": [
+    "ankitnathtiwari@gmail.com",
+    "ankitfounder@gmail.com",
+    "imarpitjaiswal@gmail.com",
+    "nbnewsgkp@gmail.com",
+    "gkpcitynews@gmail.com",
+    "gkpexpnews@gmail.com",
+    "spotlightnb123@gmail.com",
+    "lokvichar123@gmail.com",
+    "cityscoopnb@gmail.com",
+    "viralindianb@gmail.com"
+  ],
+  "bucket": {
+    "image": "nb-test-video-mum",
+    "video": "nb-test-video-mum",
+    "thumbnail": "nb-test-video-mum",
+    "deletedVideo": "nb-test-deleted-mum",
+    "deletedThumbnail": "nb-test-deleted-mum"
+  },
+  "url": {
+    "image": "https://nb-test-video-mum.s3.ap-south-1.amazonaws.com",
+    "video": "https://nb-test-video-mum.s3.ap-south-1.amazonaws.com",
+    "thumbnail": "https://nb-test-video-mum.s3.ap-south-1.amazonaws.com"
+  },
+  "region": "ap-south-1",
+  "fieldname": {
+    "thumbnail": "thumbnail",
+    "video": "video",
+    "image": "image"
+  },
+  "topics": [
+    "",
+    "all",
+    "allpost",
+    "politics",
+    "scienceandtech",
+    "entertainment",
+    "sports",
+    "international",
+    "national",
+    "world",
+    "business",
+    "singlepost",
+    "miscellaneous"
+  ]
 }
