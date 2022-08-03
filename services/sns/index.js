@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk");
 require("dotenv").config();
-const region = process.env.indusos;
+const region = process.env.AWS_BUCKET_REGION;
 const config = require("config");
 
 var sns = new AWS.SNS({ apiVersion: "2010-03-31", region: region });
